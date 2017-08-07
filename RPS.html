@@ -21,6 +21,13 @@
 // 	alert("working");
 // }
 
+var options = ["r", "p", "s"];
+// options for the choosing within an array
+var wins = 0;
+var losses = 0;
+var ties = 0;
+// these are the scoring variables
+
 
 document.onkeyup = function() {
 // detects which key was pressed on up release assigns it as a function
@@ -29,20 +36,10 @@ document.onkeyup = function() {
 		console.log(userguess);
 		// outputs the lowercase letter you have chosen to the console
 
-
-
-
-
-var options = ["r", "p", "s"];
-// options for the choosing within an array
-var wins = 0;
-var losses = 0;
-var ties = 0;
-// these are the scoring variables
+// here we take a letter in the "options" array and it gets chosen randomly by multiplying it by the math.random function and subsequently is rounded down by the math.floor function
 
 var computerGuess = options[Math.floor(Math.random()*options.length)];
 
-// here we take a letter in the "options" array and it gets chosen randomly by multiplying it by the math.random function and subsequently is rounded down by the math.floor function
 console.log(computerGuess);
 
 
@@ -55,7 +52,7 @@ console.log(computerGuess);
 								// or                or
 
 					// next we created win/lose conditionals and rules adding our scores incrementally one
-					 if ((userguess=="p") && (computerGuess=="s")) {
+				 if ((userguess=="p") && (computerGuess=="s")) {
 					 	losses++; 
 					// alert("losses: " + losses); 
 				}
@@ -73,29 +70,30 @@ console.log(computerGuess);
 				
 
 				 if ((userguess== "p") && (computerGuess== "r")) {
-				 	wins++
+				 	wins++;
 
 					// alert("wins: " + wins); 
 				}
 				
 
 				 if ((userguess== "s") && (computerGuess== "r")) {
-				 	losses++
+				 	losses++;
 					// alert("losses: " + losses); 
 				}
 				
 
 				if ((userguess== "r") && (computerGuess== "s")) {
-					wins++
+					wins++;
 					// alert("wins: " + wins); 
 					}
 
 				if ((userguess==computerGuess)) {
-					ties;
+					ties++;
 					// alert("ties: " + ties); 
 				}
-				 } else {
+				 	} else {
 					 	 alert("please choose r p or s");
+
 					  }
 
 					  var html = "<p> Press r, p, or s to start playing </p>" +
